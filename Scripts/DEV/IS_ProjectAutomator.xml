@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeployerSpec sourceType="Repository" exitOnError="true">
+
+    <DeployerServer>
+        <host>localhost:5552</host>
+        <user>Administrator</user>
+        <pwd>manage</pwd>
+        <!--<pwdHandle>$(PasswordHandle)</pwdHandle>-->
+    </DeployerServer>
+    <Environment>
+        <Repository>
+            <repalias name="IS_REPO">
+                <type>FlatFile</type>
+                <urlOrDirectory>C:\SoftwareAG101\Build_Information\Current_path\</urlOrDirectory>
+                <createIndex>false</createIndex>
+                <Test>false</Test>
+            </repalias>
+        </Repository>
+        <IS>
+            <isalias name="DEV_IS">
+                <host>localhost</host>
+                <port>5553</port>
+                <user>Administrator</user>
+                <pwd>{AES}Y5IgMqjfvkgbg7p5VUZztw==</pwd>
+                <!--<pwdHandle>$(PasswordHandle)</pwdHandle>-->
+                <useSSL>false</useSSL>
+                <version>10.12</version>
+                <installDeployerResource>false</installDeployerResource>
+                <Test>false</Test>
+                <executeACL>Internal</executeACL>
+            </isalias>
+        </IS>
+    </Environment>
+
+    <Projects projectPrefix="">
+
+        <Project name="SolaireDashboard360" type="Repository" overwrite="true" description="">
+
+            <ProjectProperties>
+                <Property name="projectLocking">false</Property>
+                <Property name="concurrentDeployment">true</Property>
+                <Property name="ignoreMissingDependencies">true</Property>
+                <Property name="isTransactionalDeployment">true</Property>
+            </ProjectProperties>
+
+            <DeploymentSet name="SolaireDashboard360_DepSet" description="" srcAlias="IS_REPO" autoResolve="full">
+                <Composite name="SolaireDashboard360" type="IS" srcAlias="IS_REPO" displayName="SolaireDashboard360"/>
+                <Composite name="Player360TestSuite" type="IS" srcAlias="IS_REPO" displayName="Player360TestSuite"/>
+                <Component name="SolaireConnection.jdbc.acsc.GamingSystemNTConn" type="IS" srcAlias="IS_REPO" displayName="SolaireConnection.jdbc.acsc:GamingSystemNTConn" compositeName="SolaireConnection" componentType="artconnection"/>
+                <!-- <Component componentType="artconnection" compositeName="SolaireConnection" displayName="SolaireConnection.jdbc.dataWarehouse:CasinoMarketingNTConn" name="SolaireConnection.jdbc.dataWarehouse.CasinoMarketingNTConn" srcAlias="IS_REPO" type="IS"/><Component componentType="artconnection" compositeName="SolaireConnection" displayName="SolaireConnection.jdbc.opera:HotelMgmtNTConn" name="SolaireConnection.jdbc.opera.HotelMgmtNTConn" srcAlias="IS_REPO" type="IS"/><Component componentType="artconnection" compositeName="SolaireConnection" displayName="SolaireConnection.jdbc.patron:CasinoMarketingNTConn" name="SolaireConnection.jdbc.patron.CasinoMarketingNTConn" srcAlias="IS_REPO" type="IS"/><Component componentType="artconnection" compositeName="SolaireConnection" displayName="SolaireConnection.jdbc.wm:QualifiedOfferNTConn" name="SolaireConnection.jdbc.wm.QualifiedOfferNTConn" srcAlias="IS_REPO" type="IS"/> -->
+                <!--<Composite displayName="SolaireAirfareReimbursementProcess" name="SolaireAirfareReimbursementProcess" srcAlias="IS_REPO" type="IS"/><Composite displayName=" SolaireAirfareReimbursementProcessImpl" name=" SolaireAirfareReimbursementProcessImpl" srcAlias="IS_REPO" type="IS"/>-->
+            </DeploymentSet>
+            <DeploymentMap name="SolaireDashboard360_DepMap" description=""/>
+            <MapSetMapping setName="SolaireDashboard360_DepSet" mapName="SolaireDashboard360_DepMap">
+                <alias type="IS">DEV_IS</alias>
+            </MapSetMapping>
+            <DeploymentCandidate name="SolaireDashboard360_DepCand" description="" mapName="SolaireDashboard360_DepMap"/>
+        </Project>
+    </Projects>
+</DeployerSpec>
