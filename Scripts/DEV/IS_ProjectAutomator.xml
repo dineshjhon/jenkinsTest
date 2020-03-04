@@ -24,7 +24,7 @@
                 <pwd>{AES}Y5IgMqjfvkgbg7p5VUZztw==</pwd>
                 <!--<pwdHandle>$(PasswordHandle)</pwdHandle>-->
                 <useSSL>false</useSSL>
-                <version>10.12</version>
+                <version>10.1</version>
                 <installDeployerResource>false</installDeployerResource>
                 <Test>false</Test>
                 <executeACL>Internal</executeACL>
