@@ -11,7 +11,7 @@
         <Repository>
             <repalias name="IS_REPO">
                 <type>FlatFile</type>
-                <urlOrDirectory>C:\Users\dij\.jenkins\workspace\outputdir\IS</urlOrDirectory>
+                <urlOrDirectory>C:\Users\dij\.jenkins\workspace\outputdir\</urlOrDirectory>
                 <createIndex>false</createIndex>
                 <Test>false</Test>
             </repalias>
