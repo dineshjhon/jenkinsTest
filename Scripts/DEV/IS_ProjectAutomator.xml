@@ -44,8 +44,8 @@
             </ProjectProperties>
 
             <DeploymentSet name="IS_TEST_DepSet" description="" srcAlias="IS_REPO" autoResolve="full">
-                <Composite name="IS" type="IS" srcAlias="IS_REPO" displayName="IS"/>
-                <Composite name="zz_fields" type="IS" srcAlias="IS_REPO" displayName="IS_TEST"/>
+                <Composite name="zz_fields" type="IS" srcAlias="IS_REPO" displayName="zz_fields"/>
+                <Composite name="zz_fields" type="IS" srcAlias="IS_REPO" displayName="zz_fields"/>
             </DeploymentSet>
             <DeploymentMap name="IS_TEST_DepMap" description=""/>
             <MapSetMapping setName="IS_TEST_DepSet" mapName="IS_TEST_DepMap">
