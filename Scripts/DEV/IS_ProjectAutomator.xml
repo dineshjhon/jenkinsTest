@@ -34,7 +34,7 @@
 
     <Projects projectPrefix="">
 
-        <Project name="IS" type="Repository" overwrite="true" description="">
+        <Project name="IS_TEST" type="Repository" overwrite="true" description="">
 
             <ProjectProperties>
                 <Property name="projectLocking">false</Property>
@@ -43,18 +43,18 @@
                 <Property name="isTransactionalDeployment">true</Property>
             </ProjectProperties>
 
-            <DeploymentSet name="SolaireDashboard360_DepSet" description="" srcAlias="IS_REPO" autoResolve="full">
+            <DeploymentSet name="IS_TEST_DepSet" description="" srcAlias="IS_REPO" autoResolve="full">
                 <Composite name="IS" type="IS" srcAlias="IS_REPO" displayName="IS"/>
-                <Composite name="Player360TestSuite" type="IS" srcAlias="IS_REPO" displayName="Player360TestSuite"/>
-                <Component name="SolaireConnection.jdbc.acsc.GamingSystemNTConn" type="IS" srcAlias="IS_REPO" displayName="SolaireConnection.jdbc.acsc:GamingSystemNTConn" compositeName="SolaireConnection" componentType="artconnection"/>
+                <Composite name="IS_TEST" type="IS" srcAlias="IS_REPO" displayName="IS_TEST"/>
+                <!--Component name="SolaireConnection.jdbc.acsc.GamingSystemNTConn" type="IS" srcAlias="IS_REPO" displayName="SolaireConnection.jdbc.acsc:GamingSystemNTConn" compositeName="SolaireConnection" componentType="artconnection"/>
                 <!-- <Component componentType="artconnection" compositeName="SolaireConnection" displayName="SolaireConnection.jdbc.dataWarehouse:CasinoMarketingNTConn" name="SolaireConnection.jdbc.dataWarehouse.CasinoMarketingNTConn" srcAlias="IS_REPO" type="IS"/><Component componentType="artconnection" compositeName="SolaireConnection" displayName="SolaireConnection.jdbc.opera:HotelMgmtNTConn" name="SolaireConnection.jdbc.opera.HotelMgmtNTConn" srcAlias="IS_REPO" type="IS"/><Component componentType="artconnection" compositeName="SolaireConnection" displayName="SolaireConnection.jdbc.patron:CasinoMarketingNTConn" name="SolaireConnection.jdbc.patron.CasinoMarketingNTConn" srcAlias="IS_REPO" type="IS"/><Component componentType="artconnection" compositeName="SolaireConnection" displayName="SolaireConnection.jdbc.wm:QualifiedOfferNTConn" name="SolaireConnection.jdbc.wm.QualifiedOfferNTConn" srcAlias="IS_REPO" type="IS"/> -->
                 <!--<Composite displayName="SolaireAirfareReimbursementProcess" name="SolaireAirfareReimbursementProcess" srcAlias="IS_REPO" type="IS"/><Composite displayName=" SolaireAirfareReimbursementProcessImpl" name=" SolaireAirfareReimbursementProcessImpl" srcAlias="IS_REPO" type="IS"/>-->
             </DeploymentSet>
-            <DeploymentMap name="SolaireDashboard360_DepMap" description=""/>
-            <MapSetMapping setName="SolaireDashboard360_DepSet" mapName="SolaireDashboard360_DepMap">
+            <DeploymentMap name="IS_TEST_DepMap" description=""/>
+            <MapSetMapping setName="IS_TEST_DepSet" mapName="IS_TEST_DepMap">
                 <alias type="IS">DEV_IS</alias>
             </MapSetMapping>
-            <DeploymentCandidate name="SolaireDashboard360_DepCand" description="" mapName="SolaireDashboard360_DepMap"/>
+            <DeploymentCandidate name="IS_TEST_DepCand" description="" mapName="IS_TEST_DepMap"/>
         </Project>
     </Projects>
 </DeployerSpec>
