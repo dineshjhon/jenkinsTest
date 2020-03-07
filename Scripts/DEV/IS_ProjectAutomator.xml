@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<DeployerSpec sourceType="Repository" exitOnError="true">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><DeployerSpec exitOnError="true" sourceType="Repository">
 
     <DeployerServer>
         <host>localhost:5552</host>
         <user>Administrator</user>
-        <pwd>manage</pwd>
+        <pwd>{AES}Y5IgMqjfvkgbg7p5VUZztw==</pwd>
         <!--<pwdHandle>$(PasswordHandle)</pwdHandle>-->
     </DeployerServer>
     <Environment>
@@ -34,7 +33,7 @@
 
     <Projects projectPrefix="">
 
-        <Project name="IS_TEST" type="Repository" overwrite="true" description="">
+        <Project description="" name="IS_TEST" overwrite="true" type="Repository">
 
             <ProjectProperties>
                 <Property name="projectLocking">false</Property>
@@ -43,15 +42,15 @@
                 <Property name="isTransactionalDeployment">true</Property>
             </ProjectProperties>
 
-            <DeploymentSet name="IS_TEST_DepSet" description="" srcAlias="IS_REPO" autoResolve="full">
-                <Composite name="zz_fields" type="IS" srcAlias="IS_REPO" displayName="zz_fields"/>
-                <Composite name="zz_fields" type="IS" srcAlias="IS_REPO" displayName="zz_fields"/>
+            <DeploymentSet autoResolve="full" description="" name="IS_TEST_DepSet" srcAlias="IS_REPO">
+                <Composite displayName="zz_fields" name="zz_fields" srcAlias="IS_REPO" type="IS"/>
+                <Composite displayName="zz_fields" name="zz_fields" srcAlias="IS_REPO" type="IS"/>
             </DeploymentSet>
-            <DeploymentMap name="IS_TEST_DepMap" description=""/>
-            <MapSetMapping setName="IS_TEST_DepSet" mapName="IS_TEST_DepMap">
+            <DeploymentMap description="" name="IS_TEST_DepMap"/>
+            <MapSetMapping mapName="IS_TEST_DepMap" setName="IS_TEST_DepSet">
                 <alias type="IS">DEV_IS</alias>
             </MapSetMapping>
-            <DeploymentCandidate name="IS_TEST_DepCand" description="" mapName="IS_TEST_DepMap"/>
+            <DeploymentCandidate description="" mapName="IS_TEST_DepMap" name="IS_TEST_DepCand"/>
         </Project>
     </Projects>
 </DeployerSpec>
